@@ -1,0 +1,87 @@
+@use 'variaveis';
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: background-color .5s ease, opacity .3s ease; /* Melhorar transição */
+    background-color: variaveis.$corDeFundo;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adicionando sombra suave */
+    padding: 3px 36px; /* Melhorar o padding geral */
+    
+    &.scrolled {
+        opacity: 0.7; /* Opacidade quando a página rola */
+    }
+
+    &:hover {
+        opacity: 1; /* Opacidade normal no hover */
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 0;
+        margin: 0 auto;
+    }
+
+    &__links {
+        display: flex;
+        align-items: center;
+        gap: 15px; /* Ajustar o espaçamento entre os itens */
+        
+        &__item {
+            display: inline-flex;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 30px; /* Borda arredondada */
+            border: 2px solid variaveis.$corTextoSpan;
+            background-color: #f4fac1;
+            transition: background-color .3s ease, transform .3s ease;
+            cursor: pointer; /* Alterar cursor para indicar clicável */
+
+            &:hover {
+                background-color: variaveis.$corTextoPrincipal; /* Mudar fundo no hover */
+                color: #fff;
+                transform: translateY(-2px); /* Levantar o item */
+            }
+
+            a {
+                text-decoration: none;
+                color: #000;
+                font-weight: 600; /* Tornar o texto mais forte */
+                transition: color .3s ease;
+            }
+        }
+    }
+
+    &__logo {
+        max-width: 60px; /* Aumentar um pouco o logo */
+        width: 100%;
+        transition: opacity .3s ease;
+        border-radius: 5px;
+    }
+    
+    @media (max-width: 768px) {
+        &__container {
+            padding-top: 10px;
+            justify-content: space-between;
+        }
+
+        &__logo {
+            max-width: 40px;
+        }
+
+        &__links {
+            display: flex;
+            align-items: end;
+
+            &__item {
+                margin: 0;
+                text-align: center;
+                padding: 7px
+            }
+        }
+    }
+}

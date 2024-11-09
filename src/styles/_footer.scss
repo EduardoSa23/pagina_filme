@@ -1,0 +1,53 @@
+@use 'variaveis';
+
+.footer {
+    background-color: variaveis.$corTextoPrincipal;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__social-links {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        padding-left: 10px;
+
+        li {
+            display: inline;
+        }
+
+        a {
+            color: #fff;
+            font-size: 20px;
+            transition: color 0.3s;
+
+            &:hover {
+                color: variaveis.$corTextoSpan;
+            }
+        }
+
+        .fab,
+        .fas {
+            font-size: 25px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 15px; 
+        font-size: 14px;
+
+        .footer__social-links {
+            gap: 10px;
+        }
+
+        .fab,
+        .fas {
+            font-size: 22px;
+        }
+    }
+}

@@ -1,0 +1,96 @@
+@use 'variaveis';
+
+.hero {
+    padding: 5.6vw;
+    padding-bottom: 0;
+    min-height: 100vh;
+    background-image: url(../images/pixelcut-export.jpeg);
+    background-size: 100%;
+    background-size: cover;
+    position: relative;
+
+    &__content {
+        max-width: 540px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        display: block;
+        
+
+        h1 {
+            font-size: 90px;
+            color: variaveis.$corTextoPrincipal;
+            text-transform: uppercase;
+            padding-bottom: 20px;
+        }
+
+        span {
+            color: variaveis.$corTextoSpan;
+        }
+
+        p {
+            padding-top: 20px;
+            font-weight: bold;
+            color: variaveis.$corTextoSecundario;
+        }
+
+        &__logo {
+            display: flex;
+            margin-top: 65px;
+            gap: 5px;
+
+            h2 {
+                font-size: 30px;
+                text-transform: uppercase;
+                padding-top: 5px;
+                color: variaveis.$corTextoPrincipal;
+            }
+
+            img {
+                max-width: 80px;
+                width: 100%;
+                opacity: .9;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 8vw; 
+        min-height: 70vh; 
+        background-position: left center;
+
+        &__content {
+            max-width: 90%;
+            text-align: center;
+            padding: 10px;
+
+            h1 {
+                font-size: 45px;
+                padding-bottom: 10px;
+            }
+
+            span {
+                font-size: 14px;
+            }
+
+            p {
+                font-size: 16px;
+                padding-top: 10px;
+            }
+
+            &__logo {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 20px;
+
+                h2 {
+                    font-size: 22px;
+                    margin-top: 10px;
+                }
+
+                img {
+                    max-width: 60px;
+                }
+            }
+        }
+    }
+}

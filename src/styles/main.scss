@@ -1,0 +1,71 @@
+@use 'hero';
+@use 'header';
+@use 'variaveis';
+@use 'history';
+@use 'trailer';
+@use 'footer';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Fajalla-one", sans-serif;
+}
+
+.button {
+    padding: 12px 25px; /* Ajuste do padding para aumentar a área clicável */
+    margin-top: 25px;
+    background-color: variaveis.$corFundoBotao; /* Cor de fundo */
+    color: variaveis.$corTextoPrincipal; /* Cor do texto */
+    border-radius: 50px; /* Arredondamento maior para um visual mais moderno */
+    width: 50%;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Espaçamento entre as letras para uma melhor legibilidade */
+    border: 2px solid #e9cb81; /* Cor da borda */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Animação suave para transições */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave para dar profundidade */
+
+    &:hover {
+        opacity: 0.9;
+        background-color: variaveis.$corTextoPrincipal; /* Cor de fundo no hover */
+        color: #fff; /* Cor do texto no hover */
+        transform: translateY(-3px); /* Leve elevação para dar efeito de clique */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Efeito de sombra mais intensa */
+    }
+
+    &:active {
+        transform: translateY(1px); /* Efeito de pressionar o botão */
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Reduz a sombra quando pressionado */
+    }
+
+    @media (max-width: 768px) {
+        width: 80%; /* Ajusta a largura do botão em telas menores */
+    }
+}
+
+.sub--title {
+    text-align: center;
+    font-size: 46px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: variaveis.$corTextoPrincipal;
+    text-transform: uppercase;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        height: 5px;
+        background-image: linear-gradient(to right, variaveis.$corTextoPrincipal, variaveis.$corTextoSpan);
+        border-radius: 3px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+}
+
+
