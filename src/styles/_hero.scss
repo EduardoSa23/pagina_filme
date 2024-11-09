@@ -53,9 +53,10 @@
     }
 
     @media (max-width: 768px) {
-        padding: 8vw; 
+        padding: 5vw; 
         min-height: 70vh; 
         background-position: left center;
+        padding-left: 35px;
 
         &__content {
             max-width: 90%;
